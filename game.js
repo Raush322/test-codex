@@ -2,7 +2,7 @@
 +const ui = {score:document.querySelector('#score'),coins:document.querySelector('#coins'),best:document.querySelector('#best'),start:document.querySelector('#startScreen'),over:document.querySelector('#gameOver'),startBtn:document.querySelector('#startBtn'),restart:document.querySelector('#restartBtn'),result:document.querySelector('#result'),resultBest:document.querySelector('#resultBest'),toast:document.querySelector('#toast'),sound:document.querySelector('#sound')};
 +let W,H,ground, state='intro', last=0, score=0, barsiki=0, best=+localStorage.getItem('barsik-best')||0, speed=350, elapsed=0, spawn=0, coinSpawn=0, objects=[], particles=[], shield=false, soundOn=true, slide=false, touchY=0, milestones=new Set();
 +const barsikSprite = new Image();
-+barsikSprite.src = 'barsik-sprite.png';
++barsikSprite.src = 'barsik-source.gif';
 +const player={x:0,y:0,w:82,h:112,vy:0,onGround:true,run:0};
 +function resize(){ const d=Math.min(devicePixelRatio||1,2); W=canvas.clientWidth;H=canvas.clientHeight;canvas.width=W*d;canvas.height=H*d;ctx.setTransform(d,0,0,d,0,0);ground=H*.77;player.x=Math.max(65,W*.16); if(player.onGround)player.y=ground-player.h }
 +addEventListener('resize',resize);resize();
